@@ -121,8 +121,9 @@ namespace LibUsbDotNet.WinUsb
 
                         // Use the actual winusb device path for SYMBOLIC_NAME_KEY. This will be used to open the device.
                         regInfo.mDeviceProperties.Add(SYMBOLIC_NAME_KEY, detailHelper.DevicePath);
-
+#if VERY_DEBUG
                         Debug.WriteLine(detailHelper.DevicePath);
+#endif
 
                         regInfo.mDeviceInterfaceGuids = new Guid[] { deviceInterfaceGuid };
 
